@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import MessageAccueil from './MessageAccueil';
+import Salutation from './Salutation';
+import CarteUtilisateur from './CarteUtilisateur';
+import FicheVehicule from './FicheVehicule';
+import ListeArticles from './ListeArticles';
 
 function App() {
+  const personne = { prenom: 'Karim', photo: '/avatar.png', ville: 'Casablanca' };
+  const fruits = ['Pomme', 'Banane', 'Orange', 'Mangue'];
+  const pays = ['Maroc', 'France', 'Espagne', 'Portugal'];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MessageAccueil />
+      <Salutation nom="Karim" />
+      <Salutation nom="Sara" />
+      <CarteUtilisateur personne={personne} largeur={150} />
+      <FicheVehicule marque="Toyota" modele="Corolla" couleur="Blanc" />
+      <FicheVehicule marque="Renault" modele="Clio" couleur="Rouge" />
+      <FicheVehicule marque="Dacia" modele="Logan" couleur="Gris" />
+      <h3>Liste de fruits :</h3>
+      <ListeArticles articles={fruits} />
+      <h3>Liste de pays :</h3>
+      <ListeArticles articles={pays} />
     </div>
   );
 }
