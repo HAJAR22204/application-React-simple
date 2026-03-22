@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# TP 1 : Creation d'une application React simple
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Ce TP a pour objectif de mettre en pratique les bases du developpement avec React, notamment la creation de composants fonctionnels, l'utilisation des props et la validation des donnees avec PropTypes.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Technologies utilisees
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React (via Create React App)
+- JavaScript (ES6)
+- JSX
+- PropTypes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Structure du projet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── App.js
+├── MessageAccueil.js
+├── Salutation.js
+├── CarteUtilisateur.js
+├── FicheVehicule.js
+├── ListeArticles.js
+└── index.js
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Composants realises
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### MessageAccueil
+Composant simple sans props qui affiche un message de bienvenue sur la page principale de l'application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Salutation
+Composant qui recoit une prop `nom` et affiche un message de salutation personnalise. Il est utilise plusieurs fois avec des noms differents pour illustrer la reutilisabilite des composants.
 
-### `npm run eject`
+### CarteUtilisateur
+Composant plus elabore qui recoit un objet `personne` contenant un prenom, une photo et une ville, ainsi qu'une prop `largeur` pour definir la taille de l'image. La validation des props est assuree par PropTypes, avec une valeur par defaut pour la largeur.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### FicheVehicule
+Composant qui affiche les informations d'un vehicule (marque, modele, couleur). Il est utilise trois fois dans App.js avec des donnees differentes pour montrer la flexibilite des props.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ListeArticles
+Composant qui recoit un tableau de chaines de caracteres et les affiche sous forme de liste HTML. Il est utilise avec deux listes distinctes pour illustrer le rendu dynamique avec la methode `map()`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Methodes utilisees
 
-## Learn More
+**Composants fonctionnels :** Chaque composant est une fonction JavaScript simple qui retourne du JSX. Cette approche est legere et facile a maintenir.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Props :** Les donnees sont transmises des composants parents vers les composants enfants via les props. Cela permet de reutiliser un meme composant avec des contenus differents.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**PropTypes :** La bibliotheque PropTypes est utilisee pour valider le type des props recues par chaque composant. Cela permet de detecter rapidement les erreurs de transmission de donnees lors du developpement.
 
-### Code Splitting
+**Valeurs par defaut :** La propriete `defaultProps` est utilisee pour definir des valeurs par defaut lorsque certaines props ne sont pas transmises par le composant parent.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Rendu de liste avec map() :** La methode JavaScript `map()` est utilisee dans le composant `ListeArticles` pour generer dynamiquement des elements de liste a partir d'un tableau.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Resultats obtenus
 
-### Making a Progressive Web App
+L'application affiche correctement sur la page :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img width="635" height="1080" alt="image" src="https://github.com/user-attachments/assets/b12f21dd-8f5f-4791-a5be-b3645f3f4de4" />
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+L'application fonctionne sans erreur dans le navigateur et la console ne signale aucun avertissement lie aux props grace a la validation PropTypes.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
